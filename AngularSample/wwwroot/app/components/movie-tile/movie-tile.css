@@ -2,3 +2,7 @@
   border-bottom: 1px solid silver;
   line-height: 2;
 }
+
+.selected {
+  background: lightskyblue;
+}

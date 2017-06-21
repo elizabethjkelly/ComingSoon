@@ -1,4 +1,4 @@
-﻿<div class="movie-tile" (click)="onClick()">
+﻿<div class="movie-tile" (click)="onClick()" [class.selected]="isSelected">
   <span>{{movie.name}}</span>
   <span>{{movie.rating}}</span>
 </div>

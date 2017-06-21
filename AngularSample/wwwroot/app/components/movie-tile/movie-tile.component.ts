@@ -11,6 +11,9 @@ export class MovieTileComponent
   @Input()
   public movie: Movie;
 
+  @Input()
+  public isSelected: boolean;
+
   @Output()
   public select = new EventEmitter();
 
