@@ -1,0 +1,22 @@
+.vs/
+
+# Dependencies
+/packages/
+
+# Artifacts is the new container for all dll output, containing bin/ and obj/
+artifacts/
+bin/
+obj/
+
+# Testing
+TestResults/
+_sandbox/
+
+# User and generated files
+*.suo
+*.log
+*.user
+
+*.pubxml
+
+project.lock.json

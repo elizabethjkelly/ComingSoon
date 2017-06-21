@@ -1,0 +1,88 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.1;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
+
+body, .not-selectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.text-selectable {
+  -webkit-touch-callout: initial;
+  -webkit-user-select: initial;
+  -moz-user-select: initial;
+  -ms-user-select: initial;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+a {
+  color: #337ab7;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* --=========================================================================================-- */
+
+.splash {
+  border: 3px solid rgba(176,196,222,0.8);
+  border-radius: 5px;
+  margin: 15% 30% 0px 30%;
+  padding: 10px;
+  line-height: 40px;
+  text-align: center;
+}
+
+  .splash span {
+    font-family: arial;
+    font-size: 32px;
+    font-weight: bold;
+    color: rgb(131, 170, 220);
+  }
+
+  .splash .prog-bar {
+    height: 20px;
+    /*background-color: rgba(176,196,222,0.8);*/
+    border-radius: 3px;
+    margin-top: 10px;
+  }
+
+  .splash .prog-bar-slider {
+    width: 70px;
+    height: 15px;
+    border: 1px solid #d7f2d7;
+    border-radius: 2px;
+    background-color: #e0f3e0;
+    box-shadow: 3px 3px 5px #a4bfa4;
+    animation: kitt 5s infinite alternate;
+    animation-timing-function: cubic-bezier(0.3, 0, 0, 1);
+  }
+
+  .splash .logo {
+    width: 200px;
+    height: 200px;
+    float: right;
+  }
+
+@keyframes kitt {
+  from {
+    opacity: 0.2;
+    margin-left: 45%;
+    width: 10%;
+  }
+
+  to {
+    opacity: 1;
+    margin-left: 0%;
+    width: 100%;
+  }
+}

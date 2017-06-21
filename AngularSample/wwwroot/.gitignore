@@ -1,0 +1,8 @@
+# Dependencies
+/node_modules/
+
+libs/
+docs/
+
+*.js
+*.js.map

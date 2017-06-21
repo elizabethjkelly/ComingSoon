@@ -1,0 +1,4 @@
+﻿<div *ngFor="let movie of movies">
+  <app-movie-tile [movie]="movie" (select)="onSelect($event)"></app-movie-tile>
+</div>
+

@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- If IE use the latest rendering engine -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Module loading root -->
+  <base href="/">
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="node_modules/assets/ico/favicon.png" />
+  <!-- Global Stylesheet -->
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body id="site-body">
+  <app>
+    <div class="splash">
+      <span>Loading...</span>
+      <div class="prog-bar">
+        <div class="prog-bar-slider"></div>
+      </div>
+    </div>
+  </app>
+
+  <!-- Polyfills -->
+  <script src="node_modules/core-js/client/shim.min.js"></script>
+  <script src="node_modules/zone.js/dist/zone.min.js"></script>
+  <script src="node_modules/reflect-metadata/test/Reflect.js"></script>
+
+  <!-- System Module Loader -->
+  <script src="node_modules/systemjs/dist/system.js"></script>
+
+  <!-- System Boot -->
+  <script src="system-config.js" type="text/javascript"></script>
+</body>
+</html>
