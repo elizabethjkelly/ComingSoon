@@ -21,13 +21,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="**/*.ts" />
+    <Content Include="**/*.js" />
+    <Content Include="**/*.js.map" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="wwwroot\node_modules\**" />
     <Compile Remove="wwwroot\node_modules\**" />
     <EmbeddedResource Remove="wwwroot\node_modules\**" />
     <None Remove="wwwroot\node_modules\**" />
     <Content Remove="**/.gitignore" />
   </ItemGroup>
-
 
   <ItemGroup>
     <Content Update="wwwroot\**\*">
