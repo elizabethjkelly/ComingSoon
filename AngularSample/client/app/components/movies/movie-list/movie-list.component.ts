@@ -4,7 +4,6 @@ import { MovieService } from '$/services'
 
 @Component({
   selector: 'app-movie-list',
-  moduleId: module.id,
   templateUrl: 'movie-list.html',
   styleUrls: ['movie-list.css']
 })
@@ -23,8 +22,9 @@ export class MovieListComponent
   constructor(movieService: MovieService)
   {
     movieService.getAll()
-      .map(res => res.json())
-      .subscribe(movies => this.updateMovies(movies), err => console.error(err));
+      .subscribe(
+        (movies: Movie[]) => this.updateMovies(movies),
+        err => console.error(err));
   }
 
   public updateMovies(movies?: Movie[])

@@ -1,8 +1,7 @@
 ﻿{
-  "compileOnSave": true,
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
+    "module": "es2015",
     "moduleResolution": "node",
     "lib": [ "es7", "dom" ],
     "typeRoots": [ "node_modules/@types" ],
@@ -15,14 +14,13 @@
     "noStrictGenericChecks": true,
     "skipDefaultLibCheck": true,
     "skipLibCheck": true, // Workaround for https://github.com/angular/angular/issues/17863. Remove this if you upgrade to a fixed version of Angular.
-
+    
     "baseUrl": ".",
     "paths": {
-      "$/*": [ "app/*/index" ]
+      "$/*": [ "client/app/*" ]
     }
   },
   "exclude": [
-    "node_modules",
-    "typings"
+    "node_modules"
   ]
 }

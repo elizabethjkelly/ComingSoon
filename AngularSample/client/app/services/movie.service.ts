@@ -1,10 +1,10 @@
 ﻿import { Injectable, Injector } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class MovieService
 {
-  constructor(private _http: Http) { }
+  constructor(private _http: HttpClient) { }
 
   public getAll()
   {

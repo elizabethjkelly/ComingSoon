@@ -2,7 +2,6 @@
 
 @Component({
   selector: 'app-movie-filter',
-  moduleId: module.id,
   templateUrl: 'movie-filter.html',
   styleUrls: ['movie-filter.css']
 })

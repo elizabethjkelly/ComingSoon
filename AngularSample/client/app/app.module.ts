@@ -1,23 +1,31 @@
 ﻿import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { APP_COMPONENTS } from '$/components';
 import { APP_PROVIDERS } from '$/services';
 
-import 'rxjs/Rx';
+import 'hammerjs/hammer';
+import 'rxjs/add/operator/map';
 
 @NgModule({
   imports: [
     BrowserModule,
-    HttpModule
+    HttpClientModule
   ],
-  declarations: [AppComponent, APP_COMPONENTS],
+  declarations: [
+    AppComponent,
+    APP_COMPONENTS
+  ],
   entryComponents: [],
-  providers: [APP_PROVIDERS],
+  providers: [
+    APP_PROVIDERS
+  ],
   exports: [],
-  bootstrap: [AppComponent],
+  bootstrap: [
+    AppComponent
+  ],
 })
 export class AppModule { }
