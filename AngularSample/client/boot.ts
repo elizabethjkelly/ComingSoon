@@ -8,7 +8,9 @@ import { AppModule } from './app/app.module';
 if (module.hot)
 {
   module.hot.accept();
-  module.hot.dispose(() => modulePromise.then(appModule => appModule.destroy()));
+  //module.hot.dispose(() =>
+  //  modulePromise.then(appModule =>
+  //    appModule.destroy()));
 }
 else
 {
