@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace AngularSample
 {
@@ -29,7 +31,11 @@ namespace AngularSample
     public void ConfigureServices(IServiceCollection services)
     {
       services.AddCors();
-      services.AddMvcCore();
+      services.AddMvcCore()
+        .AddJsonFormatters(options => {
+          options.ContractResolver = new CamelCasePropertyNamesContractResolver();
+          options.DateTimeZoneHandling = DateTimeZoneHandling.Utc;
+        });
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,8 +50,7 @@ namespace AngularSample
       app.UseStaticFiles(new StaticFileOptions
       {
         OnPrepareResponse = (context) => {
-          if (!context.Context.Request.Path.StartsWithSegments("/libs") &&
-            !context.Context.Request.Path.StartsWithSegments("/node_modules"))
+          if (context.Context.Request.Path.StartsWithSegments("/app/app.js"))
           {
             context.Context.Response.Headers["Cache-Control"] = "no-cache, no-store";
           }
