@@ -1,0 +1,33 @@
+﻿.layout-container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  font-family: Georgia;
+  font-size: 32px;
+  font-weight: bold;
+  font-variant: small-caps;
+  padding: 20px;
+  background-color: #daf1f5;
+  border-bottom: 1px solid lightblue;
+}
+
+.list-details-container {
+  display: flex;
+  flex-grow: 1;
+}
+
+.list-container {
+  flex: 1 1 20%;
+  margin-right: 20px;
+}
+
+.details-container {
+  flex: 1 1 80%;
+}

@@ -2,8 +2,6 @@
 
 @Component({
   selector: 'app',
-  template: `
-    <img src='assets/global/img/alive.jpg' 
-         style='height:100%; width:100%' />`
+  template: "<app-layout></app-layout>"
 })
 export class AppComponent { }

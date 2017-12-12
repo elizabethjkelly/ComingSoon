@@ -4,13 +4,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import { APP_COMPONENTS } from '$/components';
 
 @NgModule({
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   declarations: [
-    AppComponent
+    AppComponent,
+    APP_COMPONENTS
   ],
   entryComponents: [],
   providers: [],
