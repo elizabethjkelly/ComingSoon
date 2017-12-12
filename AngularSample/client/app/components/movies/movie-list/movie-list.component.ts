@@ -10,11 +10,18 @@ export class MovieListComponent
 {
   public movies: any[];
 
+  public selectedMovie: any;
+
   constructor(private _http: HttpClient)
   {
     _http.get<any[]>('movies/movies.json')
       .subscribe(
       movies => this.movies = movies,
       err => console.error(err));
+  }
+
+  public onSelect(event)
+  {
+    this.selectedMovie = event.target;
   }
 }

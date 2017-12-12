@@ -1,4 +1,3 @@
-﻿<div *ngFor="let movie of movies">
-  <span>{{movie.name}}</span>
-</div>
-
+﻿<app-movie-tile *ngFor="let movie of movies" 
+                [movie]="movie" [isSelected]="movie === selectedMovie"
+                (select)="onSelect($event)"></app-movie-tile>

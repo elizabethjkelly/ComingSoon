@@ -1,0 +1,29 @@
+﻿:host {
+  border-bottom: 1px solid silver;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  padding: 7px;
+}
+
+.title {
+  white-space: nowrap;
+  overflow-x: hidden;
+  margin-right: auto;
+}
+
+.rating-container {
+  display: flex;
+  justify-content: flex-end;
+  font-weight: bold;
+  background-image: url('/assets/global/img/star.png');
+  background-repeat: repeat-x;
+  background-size: contain;
+  margin-left: 10px;
+}
+
+.selected {
+  background: #daf1f5;
+}
