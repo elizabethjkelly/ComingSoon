@@ -1,0 +1,36 @@
+﻿:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.contents {
+  display: flex;
+  flex-grow: 1;
+  padding: 10px;
+}
+
+.title {
+  background: #c4e8ef;
+  padding: 7px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.poster {
+  flex: 1 0 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.details {
+  flex: 2 0 0;
+  margin-left: 10px;
+}
+
+.rating {
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 16px;
+}

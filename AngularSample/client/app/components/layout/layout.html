@@ -3,7 +3,7 @@
     <span>Comming Soon...</span>
   </div>
   <div class="list-details-container">
-    <app-movie-list class="list-container"></app-movie-list>
-    <div class="details-container"></div>
+    <app-movie-list #list class="list-container"></app-movie-list>
+    <app-movie-details [movie]="list.selectedMovie" class="details-container"></app-movie-details>
   </div>
 </div>
