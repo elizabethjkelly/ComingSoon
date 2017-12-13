@@ -1,0 +1,20 @@
+﻿:host {
+  padding: 5px;
+  /*margin-bottom: 10px;*/
+}
+
+  :host :not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+.field-container {
+  display: flex;
+}
+
+  .field-container > span {
+    min-width: 110px;
+  }
+
+  .field-container > input {
+    flex-grow: 1;
+  }

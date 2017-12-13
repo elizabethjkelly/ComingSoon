@@ -3,7 +3,10 @@
     <span>Comming Soon... :)</span>
   </div>
   <div class="list-details-container">
-    <app-movie-list #list class="list-container"></app-movie-list>
+    <div class="list-container">
+      <app-movie-filter (filterChange)="list.filter = $event.target"></app-movie-filter>
+      <app-movie-list #list></app-movie-list>
+    </div>
     <app-movie-details [movie]="list.selectedMovie" class="details-container"></app-movie-details>
   </div>
 </div>

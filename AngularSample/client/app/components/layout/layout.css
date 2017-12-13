@@ -23,8 +23,15 @@
 }
 
 .list-container {
+  display: flex;
+  flex-direction: column;
   flex: 1 1 20%;
+  border-right: 1px solid silver;
 }
+
+app-movie-filter {
+  border-bottom: 1px solid silver;
+}             
 
 .details-container {
   flex: 1 1 80%;
