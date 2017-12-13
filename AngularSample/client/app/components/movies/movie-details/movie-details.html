@@ -5,9 +5,10 @@
   <div class="contents">
     <div class="poster" [style.background-image]="'url(' + movie.posterUrl + ')'"> </div>
     <div class="details">
-      <div class="rating">
-        <strong>Rating: </strong>
-        <span>{{movie.rating}}</span>
+      <div class="rating-container">
+        <div class="star-container" [style.width.%]="movie.rating">
+          <span>{{movie.rating / 10 | number:'1.1-1'}}</span>
+        </div>
       </div>
       <div class="description">
         <span>{{movie.description}}</span>

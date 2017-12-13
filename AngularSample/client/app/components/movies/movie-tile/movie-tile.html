@@ -1,6 +1,6 @@
 ﻿<div class="container" (click)="onClick()" [class.selected]="isSelected">
   <div class="title">{{movie.name}}</div>
-  <div class="rating-container" [style.min-width.px]="movie.rating">
+  <div class="rating-container">
     <span>{{movie.rating / 10 | number:'1.1-1'}}</span>
   </div>
 </div>

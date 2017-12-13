@@ -27,6 +27,21 @@
   margin-left: 10px;
 }
 
+.rating-container {
+  display: flex;
+  padding: 3px;
+  margin-bottom: 10px;
+  background-color: lightgoldenrodyellow;
+}
+
+.star-container {
+  display: flex;
+  font-weight: bold;
+  background-image: url('/assets/global/img/star.png');
+  background-repeat: repeat-x;
+  background-size: contain;
+}
+
 .rating {
   margin-bottom: 10px;
 }
