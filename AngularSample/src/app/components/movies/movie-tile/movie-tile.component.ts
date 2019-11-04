@@ -1,5 +1,7 @@
 ﻿import { Component, Input, Output, EventEmitter } from '@angular/core';
 
+import { Movie } from '../../../model';
+
 @Component({
   selector: 'app-movie-tile',
   templateUrl: 'movie-tile.html',
@@ -8,7 +10,7 @@
 export class MovieTileComponent
 {
   @Input()
-  public movie;
+  public movie: Movie;
 
   @Input()
   public isSelected: boolean;
@@ -18,6 +20,6 @@ export class MovieTileComponent
 
   public onClick()
   {
-    this.select.emit({ target: this.movie });
+    this.select.emit({ value: this.movie });
   }
 }

@@ -1,6 +1,5 @@
 ﻿:host {
   padding: 5px;
-  /*margin-bottom: 10px;*/
 }
 
   :host :not(:last-child) {

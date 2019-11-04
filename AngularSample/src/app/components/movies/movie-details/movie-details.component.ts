@@ -1,5 +1,7 @@
 ﻿import { Component, Input, Output, EventEmitter } from '@angular/core';
 
+import { Movie } from '../../../model';
+
 @Component({
   selector: 'app-movie-details',
   templateUrl: 'movie-details.html',
@@ -8,5 +10,5 @@
 export class MovieDetailsComponent
 {
   @Input()
-  public movie;
+  public movie: Movie;
 }

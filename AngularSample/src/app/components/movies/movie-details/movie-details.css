@@ -10,10 +10,10 @@
 }
 
 .title {
-  background: #c4e8ef;
   padding: 7px;
   font-size: 24px;
   font-weight: bold;
+  border-bottom: 1px solid gray;
 }
 
 .poster {
@@ -37,6 +37,7 @@
 .star-container {
   display: flex;
   font-weight: bold;
+  margin-left: 5px;
   background-image: url('/assets/global/img/star.png');
   background-repeat: repeat-x;
   background-size: contain;

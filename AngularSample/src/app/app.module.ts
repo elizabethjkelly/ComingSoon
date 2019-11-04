@@ -3,21 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { HttpClientModule } from '@angular/common/http';
 
-import { AppComponent } from './app.component';
-import { APP_COMPONENTS } from '$/components';
+import { AppComponent, COMPONENTS } from './components';
+import { SERVICES } from './services';
 
 @NgModule({
   imports: [
     BrowserModule,
     HttpClientModule
   ],
-  declarations: [
-    AppComponent,
-    APP_COMPONENTS
-  ],
-  entryComponents: [],
-  providers: [],
-  exports: [],
+  declarations: [COMPONENTS],
+  providers: [SERVICES],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
