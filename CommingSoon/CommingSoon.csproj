@@ -19,7 +19,7 @@
 
   <Target Name="DebugClean" AfterTargets="Clean">
     <Message Importance="high" Text="Performing webpack clean..." />
-    <Exec Command="del /F /Q wwwroot\app\*" />
+    <Exec Command="if exist wwwroot\app del /F /Q wwwroot\app\*" />
   </Target>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\app\app.js') ">

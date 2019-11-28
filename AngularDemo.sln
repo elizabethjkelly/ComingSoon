@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.13
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29424.173
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AngularSample", "AngularSample\AngularSample.csproj", "{D6FB8167-6820-4AB1-A854-D3A917FE4CBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommingSoon", "CommingSoon\CommingSoon.csproj", "{BF16A30D-8486-4ACB-BE16-B8ED56B7EA1B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,12 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D6FB8167-6820-4AB1-A854-D3A917FE4CBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D6FB8167-6820-4AB1-A854-D3A917FE4CBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D6FB8167-6820-4AB1-A854-D3A917FE4CBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D6FB8167-6820-4AB1-A854-D3A917FE4CBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF16A30D-8486-4ACB-BE16-B8ED56B7EA1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF16A30D-8486-4ACB-BE16-B8ED56B7EA1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF16A30D-8486-4ACB-BE16-B8ED56B7EA1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF16A30D-8486-4ACB-BE16-B8ED56B7EA1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D18C889C-D0F7-44BE-9B89-713D5948D041}
 	EndGlobalSection
 EndGlobal
