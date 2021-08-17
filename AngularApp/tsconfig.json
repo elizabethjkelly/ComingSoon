@@ -1,19 +1,22 @@
 ﻿{
   "compilerOptions": {
-    "target": "es5",
-    "module": "es2015",
+    "target": "es2015",
+    "module": "esnext",
     "moduleResolution": "node",
-    "lib": [ "es7", "dom" ],
-    "typeRoots": [ "node_modules/@types" ],
+    "lib": [ "es2018", "dom" ],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
 
-    "sourceMap": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "removeComments": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
+    "strictPropertyInitialization": false, // Too strict for the entire app - consider this for the core model only.
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "sourceMap": true,
+    "removeComments": true,
 
-    "noEmit": true,
     "baseUrl": "."
   },
   "exclude": [

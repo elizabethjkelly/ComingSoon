@@ -13,7 +13,7 @@ export class MovieService
 
   public getMovies(): Observable<Movie[]>
   {
-    return this._http.get<Movie[]>('movies/movies.json')
+    return this._http.get<Movie[]>('assets/data/movies.json')
       .pipe(catchError(e =>
       {
         console.error(e);

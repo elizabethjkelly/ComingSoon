@@ -1,26 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 
 namespace AngularSample
 {
   public class Startup
   {
     public IConfigurationRoot Configuration { get; }
-    public IContainer ApplicationContainer { get; private set; }
 
-    public Startup(IHostingEnvironment env)
+    public Startup(IHostEnvironment env)
     {
       Configuration = new ConfigurationBuilder()
         .SetBasePath(env.ContentRootPath)
@@ -32,37 +24,37 @@ namespace AngularSample
     public void ConfigureServices(IServiceCollection services)
     {
       services.AddCors();
-      services.AddMvcCore()
-        .AddJsonFormatters(options => {
-          options.ContractResolver = new CamelCasePropertyNamesContractResolver();
-          options.DateTimeZoneHandling = DateTimeZoneHandling.Utc;
-        });
+      services.AddMvcCore();
+      //.AddJsonFormatters(options => {
+      //  options.ContractResolver = new CamelCasePropertyNamesContractResolver();
+      //  options.DateTimeZoneHandling = DateTimeZoneHandling.Utc;
+      //});
+
+      services.AddSpaStaticFiles(configuration: options => { options.RootPath = "wwwroot"; });
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-    public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, IApplicationLifetime appLifetime)
+    public void Configure(IApplicationBuilder app, IHostEnvironment env, ILoggerFactory loggerFactory, IHostApplicationLifetime appLifetime)
     {
       app.UseCors(config => config
         .AllowAnyHeader()
         .AllowAnyMethod()
         .AllowAnyOrigin());
 
-      if (env.IsDevelopment())
-      {
-        app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
-        {
-          HotModuleReplacement = true
-        });
-      }
-
       app.UseDefaultFiles();
-      app.UseStaticFiles(new StaticFileOptions
+      app.UseSpaStaticFiles(new StaticFileOptions
       {
         OnPrepareResponse = (context) => {
-          if (context.Context.Request.Path.StartsWithSegments("/app/app.js"))
-          {
-            context.Context.Response.Headers["Cache-Control"] = "no-cache, no-store";
-          }
+          context.Context.Response.Headers["Cache-Control"] = context.Context.Request.Path.Value == "/index.html"
+          ? (Microsoft.Extensions.Primitives.StringValues)"no-cache, no-store"
+          : (Microsoft.Extensions.Primitives.StringValues)"max-age=31536000";
+        }
+      });
+
+      app.UseSpa(configuration: builder => {
+        if (env.IsDevelopment())
+        {
+          builder.UseProxyToSpaDevelopmentServer(baseUri: "http://localhost:4200");
         }
       });
     }

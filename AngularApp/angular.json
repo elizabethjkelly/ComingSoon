@@ -1,0 +1,87 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "projects": {
+    "opsi-cloud": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "",
+      "sourceRoot": ".",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "tsConfig": "./tsconfig.json",
+            "index": "./src/index.html",
+            "assets": [ "./assets" ],
+            "styles": [
+              "./assets/css/main.css"
+            ],
+            "extractCss": true,
+            "main": "./src/boot.ts",
+            "outputHashing": "all",
+            "sourceMap": true,
+            "outputPath": "./wwwroot"
+          },
+          "configurations": {
+            "production": {
+              "optimization": false,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "20mb",
+                  "maximumError": "25mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "opsi-cloud:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "opsi-cloud:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "angular.io-example:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "karmaConfig": "karma.conf.js",
+            "polyfills": "Opsi.Cloud.UI/polyfills.ts",
+            "tsConfig": "Opsi.Cloud.UI/tsconfig.spec.json",
+            "main": "Opsi.Cloud.UI/test.ts",
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss"
+    }
+  },
+  "defaultProject": "opsi-cloud",
+  "cli": {
+    "analytics": false
+  }
+}
