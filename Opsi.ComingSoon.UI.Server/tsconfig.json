@@ -1,0 +1,30 @@
+﻿{
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": [ "es2018", "dom" ],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": false, // Too strict for the entire app - consider this for the core model only.
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "sourceMap": true,
+    "removeComments": true,
+
+    "baseUrl": "..",
+    "paths": {
+      "@coming-soon/core": [ "Opsi.ComingSoon.UI/core" ]
+    }
+  },
+
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
+}

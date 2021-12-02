@@ -1,0 +1,41 @@
+// This is a configuration file for the SwitchStartupProject Visual Studio Extension
+// See https://heptapod.host/thirteen/switchstartupproject/blob/branch/current/Configuration.md
+{
+  "Version": 3,
+  "ListAllProjects": false,
+  "MultiProjectConfigurations": {
+    "Opsi Cloud": {
+      "Projects": {
+        "Opsi.Cloud.UI.Server": {}
+      }
+    },
+    "Solo": {
+      "Projects": {
+        "Opsi.Cloud.Optimization.Solo.Server": {}
+      }
+    },
+    "Opsi Cloud & Solo": {
+      "Projects": {
+        "Opsi.Cloud.UI.Server": {},
+        "Opsi.Cloud.Optimization.Solo.Server": {}
+      }
+    },
+    "Opsi Cloud & PushEvent Client": {
+      "Projects": {
+        "Opsi.Cloud.UI.Server": {},
+        "Opsi.Cloud.PushEvents.Client": {}
+      }
+    },
+    "Opsi Cloud & Reverse Proxy": {
+      "Projects": {
+        "Opsi.Cloud.UI.Server": {},
+        "Opsi.Cloud.Infrastructure.ReverseProxy": {}
+      }
+    },
+    "Interview Challenge": {
+      "Projects": {
+        "Opsi.Puzzle.Server": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "projects": {
+    "comming-soon": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "",
+      "sourceRoot": "Opsi.ComingSoon.UI.Server",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "tsConfig": "Opsi.ComingSoon.UI.Server/tsconfig.json",
+            "index": "Opsi.ComingSoon.UI.Server/index.html",
+            "assets": [ "Opsi.ComingSoon.UI.Server/assets" ],
+            "styles": [ "Opsi.ComingSoon.UI.Server/assets/css/main.css" ],
+            "main": "Opsi.ComingSoon.UI.Server/boot.ts",
+            "sourceMap": true,
+            "outputPath": "Opsi.ComingSoon.UI.Server/wwwroot"
+          },
+          "configurations": {
+            "production": {
+              "optimization": false,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "20mb",
+                  "maximumError": "25mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "comming-soon:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "comming-soon:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "angular.io-example:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "karmaConfig": "karma.conf.js",
+            "polyfills": "Opsi.Cloud.UI/polyfills.ts",
+            "tsConfig": "Opsi.Cloud.UI/tsconfig.spec.json",
+            "main": "Opsi.Cloud.UI/test.ts",
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss"
+    }
+  },
+  "defaultProject": "comming-soon",
+  "cli": {
+    "analytics": false
+  }
+}

@@ -1,0 +1,13 @@
+// This is a configuration file for the SwitchStartupProject Visual Studio Extension
+// See https://heptapod.host/thirteen/switchstartupproject/blob/branch/current/Configuration.md
+{
+  "Version": 3,
+  "ListAllProjects": false,
+  "MultiProjectConfigurations": {
+    "Comming Soon": {
+      "Projects": {
+        "Opsi.ComingSoon.UI.Server": {}
+      }
+    }
+  }
+}

@@ -2,6 +2,7 @@
 
 # Dependencies
 /packages/
+/node_modules/
 
 # Artifacts is the new container for all dll output, containing bin/ and obj/
 artifacts/
