@@ -24,11 +24,8 @@ namespace AngularSample
     public void ConfigureServices(IServiceCollection services)
     {
       services.AddCors();
-      services.AddMvcCore();
-      //.AddJsonFormatters(options => {
-      //  options.ContractResolver = new CamelCasePropertyNamesContractResolver();
-      //  options.DateTimeZoneHandling = DateTimeZoneHandling.Utc;
-      //});
+      services.AddMvcCore()
+        .AddOpsiDeviceManagerApi();
 
       services.AddSpaStaticFiles(configuration: options => { options.RootPath = "wwwroot"; });
     }
@@ -46,12 +43,15 @@ namespace AngularSample
       {
         OnPrepareResponse = (context) => {
           context.Context.Response.Headers["Cache-Control"] = context.Context.Request.Path.Value == "/index.html"
-          ? (Microsoft.Extensions.Primitives.StringValues)"no-cache, no-store"
-          : (Microsoft.Extensions.Primitives.StringValues)"max-age=31536000";
+            ? "no-cache, no-store"
+            : "max-age=31536000";
         }
       });
 
-      app.UseSpa(configuration: builder => {
+      app.UseRouting();
+      app.UseEndpoints(endpoints => endpoints.MapControllers());
+
+      app.UseSpa(builder => {
         if (env.IsDevelopment())
         {
           builder.UseProxyToSpaDevelopmentServer(baseUri: "http://localhost:4200");
